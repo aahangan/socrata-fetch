@@ -1,7 +1,6 @@
 # socrata-fetch
 
 [![CI](https://github.com/aahangan/socrata-fetch/actions/workflows/ci.yml/badge.svg)](https://github.com/aahangan/socrata-fetch/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/socrata-fetch)](https://www.npmjs.com/package/socrata-fetch)
 
 A tiny, dependency-free TypeScript client for [Socrata](https://dev.socrata.com/) open-data portals: NYC Open Data,
 Chicago Data Portal, data.ny.gov, and hundreds of other city, state and federal portals.
@@ -21,8 +20,10 @@ data every morning.
 ## Install
 
 ```bash
-npm install socrata-fetch
+npm install github:aahangan/socrata-fetch
 ```
+
+Pin a version with a tag: `npm install github:aahangan/socrata-fetch#v0.1.0`. The package builds itself on install.
 
 ## Usage
 
