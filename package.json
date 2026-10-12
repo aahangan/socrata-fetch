@@ -31,7 +31,9 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "!dist/**/*.test.*"
+    "src",
+    "!dist/**/*.test.*",
+    "!src/**/*.test.ts"
   ],
   "sideEffects": false,
   "engines": {
