@@ -1,0 +1,51 @@
+{
+  "name": "socrata-fetch",
+  "version": "0.1.0",
+  "description": "Tiny, dependency-free client for Socrata open-data portals (SODA 2.1): retries with backoff, timeouts, paging and SoQL escaping.",
+  "keywords": [
+    "socrata",
+    "soda",
+    "soql",
+    "open-data",
+    "opendata",
+    "nyc-open-data",
+    "government-data",
+    "fetch"
+  ],
+  "license": "MIT",
+  "author": "Aahan Gandhi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aahangan/socrata-fetch.git"
+  },
+  "homepage": "https://github.com/aahangan/socrata-fetch#readme",
+  "bugs": "https://github.com/aahangan/socrata-fetch/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
