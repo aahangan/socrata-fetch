@@ -5,6 +5,11 @@
 A tiny, dependency-free TypeScript client for [Socrata](https://dev.socrata.com/) open-data portals: NYC Open Data,
 Chicago Data Portal, data.ny.gov, and hundreds of other city, state and federal portals.
 
+It came out of a production bug. RatSignal's daily job fetched each dataset in a single request with a `$limit` of
+20,000 rows (5,000 for Chicago), and nothing flagged a query that hit that cap, so any rows past it were silently
+dropped. `pages` and `queryAll` exist so that can't happen: they page through every matching row, sorted by Socrata's
+row id (`:id`) by default so offset paging stays stable.
+
 It does the things you end up writing yourself once a data job runs unattended:
 
 - **Retries with exponential backoff and jitter** on 429s, 5xx responses, timeouts and network errors (but not on bad queries)
